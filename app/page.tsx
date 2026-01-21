@@ -1,10 +1,25 @@
-
 "use client"
-import { Button, HStack } from "@chakra-ui/react"
+import { Button, HStack, Container } from "@chakra-ui/react"
+import MainCarousel from "./components/mainCarousel";
+import Navigation from "./components/navigation";
+
+import Breadcrumbs from "./components/breadcrumbs";
+import ProductGrid from "./(market)/product/page";
+import Footer from "./layouts/footer";
+import ProductPagination from "./components/pagination";
+
 export default function Home() {
+
   return (
-      <HStack>
-      <Button colorPalette={"red"} variant={"outline"}>Button</Button>
-    </HStack>
-  );
+    <>
+      <Navigation />
+      {/* <MainCarousel /> */}
+      <Breadcrumbs />
+      <ProductGrid />
+      
+      <ProductPagination />
+      <Footer />
+    </>
+  )
 }
+
