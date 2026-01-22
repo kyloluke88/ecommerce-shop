@@ -1,12 +1,12 @@
 // components/Navbar.jsx
 'use client'
 
-import { Box, HStack, Link, Text, IconButton, Button } from '@chakra-ui/react'
+import { Box, HStack, Link, Text, IconButton } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegBell } from "react-icons/fa";
-import { ColorModeButton } from "@/components/ui/color-mode"
+import { ColorModeButton, useColorModeValue } from "@/components/ui/color-mode"
 
 import { useState } from "react"
 
@@ -17,15 +17,30 @@ export default function Navbar() {
 
     const [cartOpen, setCartOpen] = useState(false);
 
+    const navBg = useColorModeValue('white', 'gray.900')
+    const borderColor = useColorModeValue('gray.200', 'gray.700')
     const navItems = [
-        { label: '首页', href: '/' },
+        { label: '全部', href: '/' },
         { label: 'スーツ', href: '/signup' },
-        { label: 'signin', href: '/signin' },
-        { label: 'product', href: '/product' }
+        { label: '商品', href: '/product' },
+        { label: 'カスタマーサポート', href: '/support' },
+        { label: 'カタログ', href: '/catalog' }
     ]
 
     return (
-        <Box as="nav" p={4} bg="white" borderBottom="1px" borderColor="gray.200">
+        <Box 
+        as="nav" 
+            p={4}
+            bg={navBg}
+            borderBottom="1px"
+            borderColor={borderColor}
+            // position="fixed"
+            top={0}
+            left={0}
+            w="100%"
+            zIndex={100}
+            boxShadow="sm"
+        >
             <HStack spacing={8} justify="space-between" maxW="7xl" mx="auto">
                 {/* Logo */}
                 <Text fontSize="xl" fontWeight="bold" color="blue.600">
