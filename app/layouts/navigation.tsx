@@ -10,7 +10,7 @@ import { ColorModeButton, useColorModeValue } from "@/components/ui/color-mode"
 
 import { useState } from "react"
 
-import CartDrawer from './cartDrawer';
+import CartDrawer from '../components/cartDrawer';
 
 export default function Navbar() {
     const pathname = usePathname()
@@ -20,11 +20,12 @@ export default function Navbar() {
     const navBg = useColorModeValue('white', 'gray.900')
     const borderColor = useColorModeValue('gray.200', 'gray.700')
     const navItems = [
-        { label: '全部', href: '/' },
-        { label: 'スーツ', href: '/signup' },
-        { label: '商品', href: '/product' },
-        { label: 'カスタマーサポート', href: '/support' },
-        { label: 'カタログ', href: '/catalog' }
+        { label: 'ホーム', href: '/' },
+        { label: 'マーイページ', href: '/mypage' },
+        { label: '商品', href: '/products' },
+        { label: 'ログイン', href: '/signin' },
+        { label: '登録', href: '/signup' },
+        { label: 'カート', href: '/mycart' }
     ]
 
     return (
