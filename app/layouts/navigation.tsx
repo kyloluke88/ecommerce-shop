@@ -9,7 +9,6 @@ import { FaRegBell } from "react-icons/fa";
 import { ColorModeButton, useColorModeValue } from "@/components/ui/color-mode"
 
 import { useState } from "react"
-
 import CartDrawer from '../components/cartDrawer';
 
 export default function Navbar() {
